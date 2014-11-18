@@ -169,4 +169,74 @@ public class BTreeHeap
         }
     }
     
+    // @author Younggun Chung
+    // findNode, deleteMin, decreaseKey, increaseKey, delete
+    public void printOutput(Node nd){
+    	 ArrayList<String> output = new ArrayList<String>();
+         Queue<Node> queue =  new LinkedList<Node>();
+         
+         queue.add(nd);
+         int node = 1; //because at root
+         int child = 0; //initialize it with 0 
+         while(queue.size() != 0)
+         {
+             Node n1 = queue.remove();
+             node--;
+             
+             if(n1.value == -1);
+             else {
+            	 output.add("["+ n1.value+" "+n1.index+"]");
+             }
+             
+             if(n1.left !=null)
+             {
+                 queue.add(n1.left);
+                 child ++;
+             }
+             if(n1.right != null)
+             {
+                 queue.add(n1.right);
+                 child ++;
+             }
+             if( node == 0)
+             {
+                 node = child ;
+                 child = 0;
+             }
+         }
+       //System.out.print(output);
+         for(int i =0; i < output.size(); i++)
+         {
+             System.out.print(output.get(i)+" ");
+         }
+         System.out.println();
+         output = null;
+    }
+    
+    public void deleteMin(Node nd){
+    	if(nd != null){
+    		nd.setValue(-1);    		
+    		
+    		heapify(nd);
+    	}
+    }
+    
+    public void decreaseKey(Node nd, int p, int delta){
+    	if(nd != null){
+    		
+    	}
+    }
+    
+    public void increaseKey(Node nd, int p, int delta){
+    	if(nd != null){
+    		
+    	}
+    }
+    
+    public void delete(Node nd, int p){
+    	if(nd != null){
+    		
+    	}
+    }
+    
 }
