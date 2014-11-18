@@ -54,6 +54,20 @@ public class Node
             return nd.value;
     }
 
-
+     // Young
+    public Node getNode(){
+    	return this;
+    }
     
+    public int getValue(){
+    	return this.value;
+    }
+    
+    public int getIndex(){
+    	return this.index;
+    }
+    
+    public void setValue(int n){
+    	this.value = n;
+    }
 }
