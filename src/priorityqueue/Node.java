@@ -70,4 +70,8 @@ public class Node
     public void setValue(int n){
     	this.value = n;
     }
+    
+    public void setIndex(int n){
+    	this.index = n;
+    }
 }
