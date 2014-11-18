@@ -62,25 +62,51 @@ public class ManageText
 		splitedData = info.split(" ");
 		return splitedData ;
 	}
+	public int[] getParameters(String methodName)
+	{//this method is to get parameters for decreaseKey and increaseKey
+		int [] parameters = new int[2];
+		
+		if(methodName.matches("decreaseKey") || methodName.matches("increaseKey"))
+		{
+			int indexOfparenthesis = 11;
+			String tuples = methodName.substring(indexOfparenthesis);
+			String[] arguments = tuples.split(",");
+			
+			
+		}
+		else if(methodName.matches("delete"))
+		{
+			
+		}
+		else
+		{
+			System.out.println("the given method should not take a parameter.");
+		}
+		
+		
+		
+		return parameters;
+		
+	}
 	
 	public void determineMethod(String methodName, BTreeHeap heap,Node root)
 	{//determine a method in BTreeHeap.java by a given method name as a string.
 		//Node root;
 		root = heap.getRoot();
-		if(methodName.equalsIgnoreCase("deleteMin"))
+		if(methodName.contains("deleteMin"))
 		{
 			heap.deleteMin(root);
 			
 		}
-		else if(methodName.equalsIgnoreCase("deceseKey"))
+		else if(methodName.contains("decreaseKey"))
 		{
-			heap.decreaseKey(root,int , int);
+			heap.decreaseKey(root, int , int);
 		}
-		else if(methodName.equalsIgnoreCase("increaseKey"))
+		else if(methodName.contains("increaseKey"))
 		{	
 				
 		}
-		else if(methodName.equalsIgnoreCase("delete"))
+		else if(methodName.contains("delete"))
 		{//somehow get postion p.
 			heap.delete(root, p)
 		}
